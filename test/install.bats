@@ -21,9 +21,9 @@ teardown() {
 @test "install" {
   # Random early version that doesn't look too special.
   # Won't work on arm64, tho :/
-  run asdf install gh 0.4.0
+  run asdf install gh 0.10.0
   [ "$status" -eq 0 ]
-  echo "$output" | grep "Downloading gh version 0.4.0"
+  echo "$output" | grep "Downloading gh version 0.10.0"
 }
 
 @test "install latest" {
@@ -35,6 +35,5 @@ teardown() {
 @test "list all gh" {
   run asdf list all gh
   [ "$status" -eq 0 ]
-  echo "$output" | grep "0.4.0"
-  echo "$output" | grep "0.6.2"
+  echo "$output" | grep "0.10.0"
 }
